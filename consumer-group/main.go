@@ -65,8 +65,9 @@ func main() {
 	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategyRoundRobin
 
 	// 连接到实际Kafka集群
-	brokers := []string{"192.168.10.35:9092", "192.168.10.36:9092", "192.168.10.37:9092"}
-	topic := "push_task" // 使用与现有服务相同的主题
+	// brokers := []string{"192.168.10.35:9092", "192.168.10.36:9092", "192.168.10.37:9092"}
+	brokers := []string{"localhost:9092"}
+	topic := "test-topic" // 使用通用测试主题
 	group := "demo-consumer-group"
 
 	// 创建一个接收系统信号的通道
